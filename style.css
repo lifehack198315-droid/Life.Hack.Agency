@@ -1,0 +1,412 @@
+/* ================================
+   LIFE HACK AGENCY – GLOBAL STYLES
+   ================================ */
+
+:root {
+    --bg-main: #020518;
+    --bg-alt: #07142e;
+    --bg-card: rgba(9, 24, 52, 0.92);
+    --bg-card-soft: rgba(15, 32, 70, 0.9);
+    --accent: #ffc857;          /* warm yellow accent */
+    --accent-soft: rgba(255, 200, 87, 0.18);
+    --accent-strong: #ffdd7a;
+    --text-main: #f7f9ff;
+    --text-muted: #b5bddc;
+    --link: #7fb5ff;
+    --border-subtle: rgba(255, 255, 255, 0.12);
+    --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+    --radius-lg: 18px;
+    --radius-pill: 999px;
+    --transition-fast: 0.2s ease-out;
+    --transition-med: 0.3s ease;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(circle at top left, #1d2b52 0, transparent 45%),
+        radial-gradient(circle at bottom right, #09152b 0, transparent 50%),
+        linear-gradient(135deg, #020518, #050816);
+    color: var(--text-main);
+    line-height: 1.7;
+}
+
+/* Main layout container */
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 24px 18px 60px;
+}
+
+/* Utility */
+.section {
+    margin: 60px 0;
+    text-align: center;
+}
+
+/* ====================
+   LINKS & INTERACTION
+   ==================== */
+
+a {
+    color: var(--link);
+    text-decoration: none;
+    transition: color var(--transition-fast), text-decoration-color var(--transition-fast), opacity var(--transition-fast);
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+/* Make button-style links not underlined by default */
+a.btn {
+    text-decoration: none;
+}
+
+/* ====================
+   HEADER & NAVIGATION
+   ==================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(14px);
+}
+
+.navbar {
+    background: linear-gradient(90deg, rgba(5, 15, 40, 0.96), rgba(7, 24, 60, 0.96));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+/* Logo area */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-main);
+}
+
+.logo-subtitle {
+    font-size: 0.8rem;
+    color: var(--accent-strong);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+/* Nav links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* Underline on hover */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+    transition: width var(--transition-fast);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ====================
+   HERO CARD & SECTIONS
+   ==================== */
+
+.hero {
+    background: radial-gradient(circle at top left, rgba(255, 200, 87, 0.08), transparent 50%)
+                ,var(--bg-card);
+    border-radius: 26px;
+    padding: 32px 26px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-subtle);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow accent in hero */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background:
+        radial-gradient(circle at top left, rgba(255, 200, 87, 0.12), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(127, 181, 255, 0.18), transparent 55%);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.section h1,
+.section h2,
+.section h3 {
+    margin-bottom: 0.55em;
+}
+
+.section p {
+    margin-bottom: 1em;
+    color: var(--text-muted);
+}
+
+/* Lists */
+.section ul, .section ol {
+    margin: 0 auto 1em;
+    padding-left: 1.5em;
+    max-width: 720px;
+    text-align: left;
+    color: var(--text-muted);
+}
+
+.section li {
+    margin-bottom: 0.4em;
+}
+
+/* Emphasize key sections like pricing cards that reuse .hero */
+#pricing .hero {
+    margin-bottom: 26px;
+    background: linear-gradient(135deg, var(--bg-card-soft), #060c20);
+}
+
+/* Headings styling */
+h1 {
+    font-size: 2.1rem;
+    letter-spacing: 0.03em;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+/* ====================
+   BUTTONS
+   ==================== */
+
+button,
+input[type="submit"],
+.btn {
+    display: inline-block;
+    border: none;
+    border-radius: var(--radius-pill);
+    padding: 12px 26px;
+    background: linear-gradient(135deg, #ffcf5a, #ffb347);
+    color: #201300;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-med), opacity var(--transition-fast);
+}
+
+button:hover,
+input[type="submit"]:hover,
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.85);
+    background: linear-gradient(135deg, #ffe27a, #ffc857);
+    opacity: 0.96;
+}
+
+/* Secondary button style (outline) */
+.btn-outline {
+    background: transparent;
+    color: var(--accent-strong);
+    border: 1px solid var(--accent-soft);
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background: var(--accent-soft);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
+}
+
+/* Spacing between hero buttons */
+.hero .btn + .btn {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+/* ====================
+   SPECIAL SECTIONS
+   ==================== */
+
+/* Pricing highlight text */
+#pricing p,
+#pricing li {
+    color: var(--text-muted);
+}
+
+/* Timeline / process list */
+#process ol {
+    counter-reset: step;
+}
+
+#process li {
+    position: relative;
+    padding-left: 2.2em;
+    margin-bottom: 0.8em;
+}
+
+#process li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* Intake hero */
+#intake.hero {
+    background: linear-gradient(135deg, rgba(8, 24, 60, 0.98), rgba(5, 18, 45, 0.98));
+}
+
+/* Contact section */
+#contact p {
+    color: var(--text-muted);
+}
+
+#contact a {
+    color: var(--accent-strong);
+}
+
+#contact a:hover {
+    color: var(--link);
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    opacity: 0.85;
+}
+
+/* ====================
+   RESPONSIVE DESIGN
+   ==================== */
+
+@media (max-width: 880px) {
+    .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+    }
+
+    .section {
+        margin: 46px 0;
+    }
+
+    .hero {
+        padding: 24px 18px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 18px 14px 40px;
+    }
+
+    .nav-links a {
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+    }
+
+    .section ul,
+    .section ol {
+        padding-left: 1.2em;
+    }
+
+    .hero .btn {
+        width: 100%;
+        text-align: center;
+        margin-left: 0 !important;
+    }
+}
