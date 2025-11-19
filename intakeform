@@ -1,0 +1,102 @@
+<section id="intake" class="section hero">
+    <h2>Life Hack Intake Client Form</h2>
+    <p>Fill this out so we can design your perfect website or app. The more detail you give, the better we can make it.</p>
+
+    <form class="intake-form" action="#" method="post">
+        <!-- Contact Info -->
+        <div class="form-row">
+            <label for="clientName">Your Name</label>
+            <input type="text" id="clientName" name="clientName" required>
+        </div>
+
+        <div class="form-row">
+            <label for="businessName">Business Name</label>
+            <input type="text" id="businessName" name="businessName" required>
+        </div>
+
+        <div class="form-row">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="682-000-0000" required>
+        </div>
+
+        <div class="form-row">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- Project Type -->
+        <div class="form-row">
+            <label>What are you wanting built?</label>
+            <div class="form-options">
+                <label><input type="radio" name="projectType" value="website" checked> Website</label>
+                <label><input type="radio" name="projectType" value="app"> App</label>
+                <label><input type="radio" name="projectType" value="both"> Both</label>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <label for="services">Services you offer (list or describe)</label>
+            <textarea id="services" name="services" rows="3"></textarea>
+        </div>
+
+        <!-- Style / Branding -->
+        <div class="form-row">
+            <label for="colors">Colors you want on the website</label>
+            <input type="text" id="colors" name="colors" placeholder="Example: midnight blue, gold, white">
+        </div>
+
+        <div class="form-row">
+            <label for="style">How do you want it to feel?</label>
+            <textarea id="style" name="style" rows="3" placeholder="Clean and modern, fun and bold, luxury, etc."></textarea>
+        </div>
+
+        <!-- Content & Features -->
+        <div class="form-row">
+            <label for="pages">What pages do you need?</label>
+            <textarea id="pages" name="pages" rows="3" placeholder="Example: Home, About, Services, Pricing, FAQ, Contact"></textarea>
+        </div>
+
+        <div class="form-row">
+            <label for="features">Must-have features (you can’t live without)</label>
+            <textarea id="features" name="features" rows="4" placeholder="Online booking, contact form, photo gallery, price list, testimonials, etc."></textarea>
+        </div>
+
+        <div class="form-row">
+            <label for="photos">Any photos or logos you already have?</label>
+            <textarea id="photos" name="photos" rows="3" placeholder="Tell me what you have and how you want to use it. You can email the actual files after this."></textarea>
+        </div>
+
+        <!-- Budget & Timeline -->
+        <div class="form-row">
+            <label for="budget">Rough budget</label>
+            <select id="budget" name="budget">
+                <option value="$600">Landing page – around $600</option>
+                <option value="$1000">Business site – around $1,000</option>
+                <option value="$1500+">The Works – $1,500+</option>
+                <option value="not-sure">Not sure yet – need advice</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label for="timeline">When do you want it done?</label>
+            <select id="timeline" name="timeline">
+                <option value="asap">ASAP (rush if possible)</option>
+                <option value="2-3-weeks">2–3 weeks</option>
+                <option value="1-2-months">1–2 months</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label for="notes">Anything else I should know?</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+
+        <div class="form-row form-actions">
+            <button type="submit" class="btn">Submit Intake Form</button>
+        </div>
+
+        <p class="intake-footer-note">
+            After you submit this, I’ll review it and reach out by phone or email to lock in your package and payment.
+        </p>
+    </form>
+</section>
